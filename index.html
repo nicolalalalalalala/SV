@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ShoreVest Partners</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Inter,Arial,sans-serif;
+background:#f5f5f2;
+color:#121212;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:28px 60px;
+background:#111;
+color:white;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+margin:0;
+padding:0;
+font-size:14px;
+letter-spacing:.08em;
+}
+
+.hero{
+background:#151512;
+color:white;
+padding:120px 60px;
+}
+
+.hero h1{
+font-size:56px;
+margin-bottom:24px;
+max-width:700px;
+}
+
+.hero p{
+max-width:600px;
+line-height:1.7;
+opacity:.85;
+}
+
+.cta{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:14px 26px;
+border:1px solid #111;
+cursor:pointer;
+background:white;
+font-weight:500;
+margin-top:30px;
+}
+
+.cta--dark{
+background:#111;
+color:white;
+border:none;
+}
+
+section{
+padding:90px 60px;
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+font-size:40px;
+margin-bottom:40px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+margin-top:40px;
+}
+
+.stat{
+font-size:42px;
+font-weight:600;
+}
+
+.stat-label{
+font-size:14px;
+letter-spacing:.12em;
+color:#777;
+}
+
+.team-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+margin-top:60px;
+}
+
+.tm{
+cursor:pointer;
+}
+
+.tm__photo{
+position:relative;
+overflow:hidden;
+}
+
+.tm__photo img{
+width:100%;
+display:block;
+}
+
+.tm__overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.55);
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+transition:opacity .3s ease;
+}
+
+.tm:hover .tm__overlay{
+opacity:1;
+}
+
+.tm__name{
+margin-top:14px;
+font-weight:600;
+}
+
+.tm__role{
+font-size:13px;
+color:#777;
+}
+
+.bio-modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+display:none;
+align-items:center;
+justify-content:center;
+padding:40px;
+z-index:999;
+}
+
+.bio-modal.open{
+display:flex;
+}
+
+.bio-panel{
+background:white;
+max-width:760px;
+padding:44px;
+position:relative;
+}
+
+.bio-close{
+position:absolute;
+right:20px;
+top:20px;
+font-size:24px;
+border:none;
+background:none;
+cursor:pointer;
+}
+
+.bio-name{
+font-size:36px;
+margin-bottom:8px;
+}
+
+.bio-role{
+font-size:12px;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:#777;
+margin-bottom:20px;
+}
+
+.bio-text{
+line-height:1.7;
+}
+
+footer{
+background:#111;
+color:white;
+padding:60px;
+margin-top:80px;
+font-size:14px;
+}
+
+@media(max-width:900px){
+
+.hero{
+padding:80px 30px;
+}
+
+section{
+padding:70px 30px;
+}
+
+.team-grid{
+grid-template-columns:1fr;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div>SHOREVEST</div>
+
+<ul>
+<li>Firm</li>
+<li>Strategy</li>
+<li>Team</li>
+<li>Insights</li>
+<li>Contact</li>
+</ul>
+
+</nav>
+
+
+<div class="hero">
+
+<h1>The patient advantage in China credit</h1>
+
+<p>
+ShoreVest Partners is a specialist private credit investment firm focused exclusively on China’s debt markets. For over two decades the firm has invested across complex credit situations with an emphasis on downside protection and disciplined underwriting.
+</p>
+
+<button class="cta">Discover the Firm</button>
+
+</div>
+
+
+<section>
+
+<div class="section-title">The Firm</div>
+
+<p>
+ShoreVest Partners invests across China’s credit markets, including distressed debt, asset-backed lending, and special situations. The firm’s strategy emphasises senior secured positions, disciplined underwriting, and alignment with institutional investors.
+</p>
+
+<div class="stats">
+
+<div>
+<div class="stat">$2B+</div>
+<div class="stat-label">Capital Deployed</div>
+</div>
+
+<div>
+<div class="stat">20+</div>
+<div class="stat-label">Years in China Credit</div>
+</div>
+
+<div>
+<div class="stat">2004</div>
+<div class="stat-label">Firm Founded</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="section-title">Team</div>
+
+<div class="team-grid">
+
+<div class="tm">
+
+<div class="tm__photo">
+
+<img src="https://shorevest.com/wp-content/uploads/2021/03/Benjamin-Fanger-260x295.png">
+
+<div class="tm__overlay">
+<button class="cta">View Profile</button>
+</div>
+
+</div>
+
+<div class="tm__name">Benjamin Fanger</div>
+<div class="tm__role">Managing Partner & Founder</div>
+
+</div>
+
+
+<div class="tm">
+
+<div class="tm__photo">
+
+<img src="https://shorevest.com/wp-content/uploads/2020/11/Team_0006_Ada-Bi_1-260x295.jpg">
+
+<div class="tm__overlay">
+<button class="cta">View Profile</button>
+</div>
+
+</div>
+
+<div class="tm__name">Ada Bi</div>
+<div class="tm__role">Partner & Chief Financial Officer</div>
+
+</div>
+
+
+<div class="tm">
+
+<div class="tm__photo">
+
+<img src="https://shorevest.com/wp-content/uploads/2020/11/Team_0003_Mei_1-260x295.jpg">
+
+<div class="tm__overlay">
+<button class="cta">View Profile</button>
+</div>
+
+</div>
+
+<div class="tm__name">Mei</div>
+<div class="tm__role">Partner</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div id="bioModal" class="bio-modal">
+
+<div class="bio-panel">
+
+<button class="bio-close" onclick="closeBio()">×</button>
+
+<div class="bio-name" id="bioName"></div>
+<div class="bio-role" id="bioRole"></div>
+<div class="bio-text" id="bioText"></div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+© ShoreVest Partners
+
+</footer>
+
+
+<script>
+
+const bios={
+
+"Benjamin Fanger":
+"Benjamin Fanger is the Founder and Managing Partner of ShoreVest Partners and a pioneer in China’s private credit markets. Over more than two decades he has managed more than $2 billion in Chinese private credit investments.",
+
+"Ada Bi":
+"Ada Bi is a Partner and Chief Financial Officer of ShoreVest Partners and serves on the firm's Investment Committee.",
+
+"Mei":
+"Mei is a Partner at ShoreVest Partners with extensive experience across Chinese private credit investments."
+
+}
+
+function openBio(name,role){
+
+document.getElementById("bioName").innerText=name
+document.getElementById("bioRole").innerText=role
+document.getElementById("bioText").innerText=bios[name] || ""
+document.getElementById("bioModal").classList.add("open")
+
+}
+
+function closeBio(){
+
+document.getElementById("bioModal").classList.remove("open")
+
+}
+
+document.querySelectorAll(".tm").forEach(card=>{
+
+let name=card.querySelector(".tm__name").innerText
+let role=card.querySelector(".tm__role").innerText
+
+card.addEventListener("click",()=>openBio(name,role))
+
+})
+
+</script>
+
+
+</body>
+</html>
