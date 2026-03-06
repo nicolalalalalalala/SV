@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShoreVest Partners — China Private Credit</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red:#b3213f;
+  --ink:#0b0b09;
+  --ink-2:#12120f;
+  --off:#f3f1ee;
+  --line:rgba(0,0,0,.09);
+  --mist:#8e8b85;
+  --text:#1b1b17;
+  --white:#fff;
+  --serif:'EB Garamond', Georgia, serif;
+  --sans:'Inter', system-ui, sans-serif;
+  --max:1380px;
+  --pad:32px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--text);background:var(--off);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--max);padding:0 var(--pad);margin:0 auto}
+
+.eyebrow{font-size:28px;color:#262622;font-family:var(--serif);padding:24px 0 18px}
+
+.hero{background:var(--ink);color:#f5f3f1;padding:140px 0 90px;border-top:1px solid #1e1d1b}
+.kicker{font-size:31px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.48);display:flex;align-items:center;gap:18px;margin-bottom:40px}
+.kicker::before{content:'';width:56px;height:1px;background:var(--red)}
+.hero h1{font-family:var(--serif);font-size:112px;line-height:.92;max-width:620px;font-weight:400}
+.hero h1 em{color:var(--red);font-style:italic}
+.cta{display:inline-flex;align-items:center;gap:20px;margin-top:56px;text-transform:uppercase;letter-spacing:.14em;font-weight:500;font-size:36px;color:#f0efed}
+.cta-ring{width:62px;height:62px;border-radius:999px;border:1px solid rgba(255,255,255,.34);display:flex;align-items:center;justify-content:center;font-size:35px;transition:.2s}
+.cta:hover .cta-ring{background:var(--red);border-color:var(--red)}
+
+.intro{background:var(--off);padding:80px 0 0}
+.intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px}
+.intro-copy{font-family:var(--serif);font-size:55px;line-height:1.4;color:#67645f}
+.stats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.stat{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:54px 36px 48px}
+.stat .n{font-family:var(--serif);font-size:77px;line-height:.9;color:#111}
+.stat .l{font-size:28px;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);margin-top:14px}
+.marquee{margin-top:56px;background:#0a0a09;color:#373732;padding:18px 0;border-top:1px solid #151513;border-bottom:1px solid #151513;white-space:nowrap;overflow:hidden}
+.marquee-track{display:inline-flex;gap:60px;animation:scroll 28s linear infinite}
+.marquee span{font-size:30px;letter-spacing:.14em;text-transform:uppercase}
+.marquee b{color:var(--red);font-size:34px;margin-right:16px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.about{padding:90px 0 70px}
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:74px;padding-bottom:80px;border-bottom:1px solid var(--line)}
+.about-left .label{font-size:29px;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:20px;margin-bottom:30px}
+.about-left .label::after{content:'';height:1px;width:64px;background:var(--mist)}
+.about-left h2{font-family:var(--serif);font-size:105px;line-height:.95;font-weight:400}
+.about-left h2 em{font-style:italic}
+.about-right{font-size:51px;line-height:1.45;color:#242420}
+.about-right .cta{color:#1e1d1a;font-size:33px;margin-top:24px}
+.about-right .cta-ring{border-color:rgba(0,0,0,.2)}
+.about-right .cta:hover .cta-ring{color:#fff}
+.visuals{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin:56px 0 34px}
+.visuals img{aspect-ratio:16/8;object-fit:cover}
+
+.section-nav{display:flex;align-items:center;gap:54px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.brand-mark{display:flex;align-items:center;gap:20px;min-width:380px}
+.brand-mark .star{color:var(--red);font-size:75px;line-height:1}
+.brand-mark .title{font-family:var(--serif);font-size:70px;line-height:1}
+.brand-mark .sub{font-size:26px;color:#807d77;letter-spacing:.34em;margin-top:8px}
+.menu{display:flex;gap:50px;font-size:35px;letter-spacing:.12em;text-transform:uppercase;color:#7f7c77}
+.menu a:hover{color:#111}
+.lp{margin-left:auto;border:1px solid var(--line);padding:14px 24px;font-size:31px;letter-spacing:.12em;text-transform:uppercase;color:#282723}
+
+.value-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:46px;padding:72px 0 86px}
+.value-card h3{font-family:var(--serif);font-size:64px;margin-bottom:18px;font-weight:400}
+.value-card p{font-size:48px;line-height:1.45;color:#6c6964}
+.value-card a{display:inline-flex;margin-top:24px;font-size:31px;letter-spacing:.14em;text-transform:uppercase;gap:16px}
+
+.metric-band{background:#070707;color:#f4f4f2;padding:50px 0}
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,.08)}
+.metric{padding:16px 28px;border-right:1px solid rgba(255,255,255,.08)}
+.metric .n{font-family:var(--serif);font-size:104px;line-height:.9}
+.metric .l{font-size:31px;letter-spacing:.13em;text-transform:uppercase;color:#5f605c;margin-top:14px}
+
+.what{padding:90px 0 0}
+.what-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:74px;align-items:end;padding-bottom:56px}
+.what h2{font-family:var(--serif);font-size:106px;line-height:.9;font-weight:400}
+.what h2 em{font-style:italic}
+.what p{font-family:var(--serif);font-size:52px;line-height:1.42;color:#7a7772}
+
+.strategy{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:70px}
+.strat{padding:48px 36px 56px;border-right:1px solid var(--line)}
+.strat:last-child{border-right:none}
+.strat small{font-size:24px;letter-spacing:.2em;text-transform:uppercase;color:#9e3c55;font-weight:600}
+.strat h3{font-family:var(--serif);font-size:67px;line-height:1.1;margin:22px 0 20px;font-weight:400}
+.strat p{font-size:43px;color:#77736e;line-height:1.45}
+.strat a{display:inline-flex;margin-top:28px;font-size:33px;letter-spacing:.12em;text-transform:uppercase;gap:12px}
+
+.team{padding:72px 0 80px}
+.team-head{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-bottom:28px}
+.team-head h2{font-family:var(--serif);font-size:88px;line-height:.96;font-weight:400}
+.team-head p{max-width:760px;font-family:var(--serif);font-size:38px;color:#74716c}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.tm{cursor:pointer}
+.tm__photo{position:relative;overflow:hidden;background:#d9d7d3;aspect-ratio:260/295}
+.tm__photo img{width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+.tm:hover .tm__photo img{transform:scale(1.03)}
+.tm__overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:14px;background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.08));opacity:0;transition:opacity .25s}
+.tm:hover .tm__overlay{opacity:1}
+.tm__name{font-family:var(--serif);font-size:50px;margin-top:12px}
+.tm__role{font-size:25px;letter-spacing:.12em;text-transform:uppercase;color:#8a867f}
+
+.quote{background:#080808;color:#efefed;padding:110px 0;text-align:center}
+.quote .star{color:#3c3d3a;font-size:86px}
+.quote blockquote{font-family:var(--serif);font-style:italic;font-size:85px;line-height:1.28;max-width:1180px;margin:22px auto 26px}
+.quote p{letter-spacing:.16em;text-transform:uppercase;color:#3f403d;font-size:30px}
+
+.band{height:220px;background:#080808;margin:0 auto}
+.light-block{height:460px;background:var(--off);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+.footer{background:#0a0b09;color:#d0d2ce;padding:70px 0 44px}
+.footer-top{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:46px;padding:34px 0 54px;border-top:1px solid #1a1a18;border-bottom:1px solid #1a1a18}
+.footer-brand h4{font-family:var(--serif);font-style:italic;font-size:78px;line-height:1.1;color:#f3f3f1;margin-bottom:28px}
+.footer-col h5{font-size:27px;letter-spacing:.16em;text-transform:uppercase;color:#3f423d;margin-bottom:18px}
+.footer-col a{display:block;font-size:46px;color:#81847f;margin-bottom:10px}
+.footer-col a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:28px;color:#444742;font-size:37px}
+.footer-links{display:flex;gap:32px;flex-wrap:wrap}
+
+.bio-modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-start;justify-content:center;padding:90px 32px;z-index:999}
+.bio-modal.open{display:flex}
+.bio-panel{background:#fff;border:1px solid var(--line);width:min(1260px,100%);padding:46px 52px 60px;position:relative;min-height:340px}
+.bio-kicker{font-size:31px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);margin-bottom:28px}
+.bio-close{position:absolute;right:30px;top:22px;border:none;background:none;font-size:70px;color:#222;cursor:pointer;line-height:1}
+.bio-name{font-family:var(--serif);font-size:80px;line-height:1.02;color:#12120f;margin-bottom:10px}
+.bio-role{font-size:28px;letter-spacing:.12em;text-transform:uppercase;color:#87847f;margin-bottom:22px}
+.bio-text{font-size:43px;line-height:1.5;color:#242420;max-width:1100px}
+
+@media (max-width:1280px){
+  .hero h1{font-size:84px}
+  .about-left h2,.what h2{font-size:74px}
+  .intro-copy,.about-right,.value-card p,.strat p,.bio-text{font-size:26px}
+  .metric .n{font-size:66px}
+  .metric .l,.stat .l,.strat small,.footer-col h5{font-size:14px}
+  .strat h3,.value-card h3,.bio-name{font-size:48px}
+  .footer-col a{font-size:24px}
+  .footer-brand h4{font-size:48px}
+  .footer-bottom{font-size:18px}
+  .cta,.about-right .cta,.strat a,.value-card a{font-size:13px}
+  .menu{font-size:14px}
+  .brand-mark .title{font-size:44px}
+  .brand-mark .sub{font-size:12px}
+  .brand-mark .star{font-size:44px}
+}
+@media (max-width:980px){
+  .intro-grid,.about-grid,.what-grid{grid-template-columns:1fr}
+  .value-cards,.strategy,.metric-grid,.footer-top{grid-template-columns:1fr}
+  .menu,.lp{display:none}
+  .hero h1{font-size:56px}
+  .kicker{font-size:11px}
+  .stat .n{font-size:52px}
+  .quote blockquote{font-size:40px}
+  .bio-name{font-size:46px}
+}
+</style>
+</head>
+<body>
+  <main>
+    <section class="eyebrow wrap">ShoreVest Partners — China Private Credit</section>
+
+    <section class="hero">
+      <div class="wrap">
+        <div class="kicker">China Private Credit · Est. 2004</div>
+        <h1>The patient advantage<br>in <em>China.</em></h1>
+        <a class="cta" href="#firm"><span>Discover the firm</span><span class="cta-ring">→</span></a>
+      </div>
+    </section>
+
+    <section class="intro" id="firm">
+      <div class="wrap intro-grid">
+        <p class="intro-copy">ShoreVest Partners — 新岸资本 — is a specialist private credit manager focused exclusively on China’s debt markets. For over two decades, we have applied institutional-grade credit discipline and uncompromising downside protection.</p>
+        <div class="stats">
+          <div class="stat"><div class="n">$2B+</div><div class="l">Capital deployed</div></div>
+          <div class="stat"><div class="n">20+</div><div class="l">Years in China credit</div></div>
+          <div class="stat"><div class="n">#2</div><div class="l">Global credit market</div></div>
+          <div class="stat"><div class="n">2004</div><div class="l">Established, Asia</div></div>
+        </div>
+      </div>
+      <div class="marquee">
+        <div class="marquee-track">
+          <span><b>◆</b>Private Credit</span><span><b>◆</b>Asset-Based Lending</span><span><b>◆</b>Distressed Debt</span><span><b>◆</b>Non-Performing Loans</span><span><b>◆</b>First-Lien Collateral</span>
+          <span><b>◆</b>Private Credit</span><span><b>◆</b>Asset-Based Lending</span><span><b>◆</b>Distressed Debt</span><span><b>◆</b>Non-Performing Loans</span><span><b>◆</b>First-Lien Collateral</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about wrap">
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="label">About the firm</div>
+          <h2>Two decades<br>of edge.<br><em>One market.</em></h2>
+        </div>
+        <div class="about-right">
+          ShoreVest has navigated every phase of China’s credit cycle since inception — the boom years, regulatory tightening, NPL waves, and current restructuring. We focus exclusively on asset-backed private credit in China where local execution matters.
+          <a class="cta" href="#team"><span>Meet the leadership team</span><span class="cta-ring">→</span></a>
+        </div>
+      </div>
+
+      <div class="visuals">
+        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80" alt="Roots">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a814c963?auto=format&fit=crop&w=1200&q=80" alt="Rock formation">
+        <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=80" alt="Ancient tree">
+      </div>
+
+      <div class="section-nav">
+        <div class="brand-mark">
+          <div class="star">✶</div>
+          <div>
+            <div class="title">ShoreVest</div>
+            <div class="sub">新 岸 资 本</div>
+          </div>
+        </div>
+        <nav class="menu" aria-label="Section nav">
+          <a href="#firm">The Firm</a>
+          <a href="#strategy">Strategy</a>
+          <a href="#research">Research</a>
+          <a href="#team">Team</a>
+          <a href="#insights">Insights</a>
+          <a href="#">中文</a>
+        </nav>
+        <a class="lp" href="#">LP Login</a>
+      </div>
+
+      <div class="value-cards" id="research">
+        <article class="value-card">
+          <h3>Proprietary Sourcing</h3>
+          <p>Built over two decades of on-the-ground relationship building across China’s financial ecosystem.</p>
+          <a href="#"><span>Learn more about our sourcing</span><span>→</span></a>
+        </article>
+        <article class="value-card">
+          <h3>Disciplined Analysis</h3>
+          <p>Rigorous first-lien downside protection with meaningful margin of safety secured against real assets.</p>
+          <a href="#"><span>Learn more about our process</span><span>→</span></a>
+        </article>
+        <article class="value-card">
+          <h3>Alignment of Interests</h3>
+          <p>The highest ethical standards and long-term alignment with institutions that entrust us with capital.</p>
+          <a href="#"><span>Learn about our team</span><span>→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="metric-band">
+      <div class="wrap metric-grid">
+        <div class="metric"><div class="n">$2B+</div><div class="l">Capital deployed</div></div>
+        <div class="metric"><div class="n">20+</div><div class="l">Years in China private credit</div></div>
+        <div class="metric"><div class="n">100%</div><div class="l">China-focused mandate</div></div>
+        <div class="metric"><div class="n">2004</div><div class="l">Established, Asia</div></div>
+      </div>
+    </section>
+
+    <section class="what" id="strategy">
+      <div class="wrap what-grid">
+        <h2>Three<br>strategies.<br><em>One discipline.</em></h2>
+        <p>Each strategy is underpinned by asset-backed collateral and an unwavering focus on capital preservation alongside return generation through each phase of China’s private credit cycle.</p>
+      </div>
+
+      <div class="wrap strategy">
+        <article class="strat">
+          <small>Strategy 01</small>
+          <h3>Asset-Based Lending</h3>
+          <p>Direct lending secured by real estate collateral with first-lien priority and disciplined loan-to-value ratios.</p>
+          <a href="#"><span>Learn more about asset-based lending</span><span>→</span></a>
+        </article>
+        <article class="strat">
+          <small>Strategy 02</small>
+          <h3>Asset Restructuring</h3>
+          <p>Complex situations requiring legal, financial and operational expertise to restructure distressed assets.</p>
+          <a href="#"><span>Learn more about asset restructuring</span><span>→</span></a>
+        </article>
+        <article class="strat">
+          <small>Strategy 03</small>
+          <h3>Debt Resolutions</h3>
+          <p>Acquisition and resolution of non-performing loans from financial institutions with end-to-end capabilities.</p>
+          <a href="#"><span>Learn more about debt resolutions</span><span>→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="team wrap" id="team">
+      <div class="team-head">
+        <h2>Leadership<br>team.</h2>
+        <p>Profiles open on click with detailed bios and role context.</p>
+      </div>
+      <div class="team-grid">
+        <article class="tm" tabindex="0" role="button" aria-label="View Benjamin Fanger profile">
+          <div class="tm__photo">
+            <img src="https://shorevest.com/wp-content/uploads/2021/03/Benjamin-Fanger-260x295.png" alt="Benjamin Fanger">
+            <div class="tm__overlay"><span class="cta"><span>View Profile</span><span class="cta-ring">→</span></span></div>
+          </div>
+          <div class="tm__name">Benjamin Fanger</div>
+          <div class="tm__role">Managing Partner & Founder</div>
+        </article>
+        <article class="tm" tabindex="0" role="button" aria-label="View Ada Bi profile">
+          <div class="tm__photo">
+            <img src="https://shorevest.com/wp-content/uploads/2020/11/Team_0006_Ada-Bi_1-260x295.jpg" alt="Ada Bi">
+            <div class="tm__overlay"><span class="cta"><span>View Profile</span><span class="cta-ring">→</span></span></div>
+          </div>
+          <div class="tm__name">Ada Bi</div>
+          <div class="tm__role">Partner & Chief Financial Officer</div>
+        </article>
+        <article class="tm" tabindex="0" role="button" aria-label="View Mei profile">
+          <div class="tm__photo">
+            <img src="https://shorevest.com/wp-content/uploads/2020/11/Team_0003_Mei_1-260x295.jpg" alt="Mei">
+            <div class="tm__overlay"><span class="cta"><span>View Profile</span><span class="cta-ring">→</span></span></div>
+          </div>
+          <div class="tm__name">Mei</div>
+          <div class="tm__role">Partner</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="quote">
+      <div class="wrap">
+        <div class="star">✶</div>
+        <blockquote>“The Coastal Redwood grows slowly but endures for centuries. We adopted it as our symbol to reflect our ambition of building ShoreVest as a hundred-year firm.”</blockquote>
+        <p>ShoreVest Partners — Investment Philosophy</p>
+      </div>
+    </section>
+
+    <section class="light-block wrap" aria-hidden="true"></section>
+    <section class="band wrap" aria-hidden="true"></section>
+    <section class="light-block wrap" aria-hidden="true"></section>
+    <section class="band wrap" aria-hidden="true"></section>
+
+    <section class="footer" id="insights">
+      <div class="wrap">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <h4>Invest with<br>ShoreVest.</h4>
+            <div style="font-size:74px;color:#8f9490">✶</div>
+          </div>
+          <div class="footer-col">
+            <h5>Quick Links</h5>
+            <a href="#firm">The Firm</a>
+            <a href="#strategy">Investment Strategy</a>
+            <a href="#research">China Debt Dynamics</a>
+            <a href="#team">Leadership</a>
+          </div>
+          <div class="footer-col">
+            <h5>What we do</h5>
+            <a href="#">Asset-Based Lending</a>
+            <a href="#">Asset Restructuring</a>
+            <a href="#">Debt Resolutions</a>
+            <a href="#">News & Insights</a>
+          </div>
+          <div class="footer-col">
+            <h5>Get in touch</h5>
+            <a href="#">Our Offices</a>
+            <a href="#">Contact Us</a>
+            <a href="#">LP Login</a>
+            <a href="#">中文版本 →</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>© 2026 ShoreVest Partners 新岸资本. All rights reserved.</div>
+          <div class="footer-links">
+            <a href="#">Legal</a><a href="#">Privacy Notice</a><a href="#">Transparency & Disclosure</a><a href="#">LP Login</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="bioModal" class="bio-modal" role="dialog" aria-modal="true" aria-labelledby="bioName">
+    <div class="bio-panel">
+      <button class="bio-close" aria-label="Close" onclick="closeBio()">×</button>
+      <div class="bio-kicker">Team Profile</div>
+      <div class="bio-name" id="bioName"></div>
+      <div class="bio-role" id="bioRole"></div>
+      <div class="bio-text" id="bioText"></div>
+    </div>
+  </div>
+
+<script>
+const bios = {
+  'Benjamin Fanger': 'Benjamin Fanger is the Founder and Managing Partner of ShoreVest Partners and a pioneer in China private credit. Over two decades he has managed more than $2 billion in Chinese private credit investments.',
+  'Ada Bi': 'Ada Bi is a Partner and Chief Financial Officer of ShoreVest Partners and serves on the firm\'s Investment Committee.',
+  'Mei': 'Mei is a Partner at ShoreVest Partners with extensive experience across Chinese private credit investments and portfolio management.'
+};
+
+function openBio(name, role) {
+  document.getElementById('bioName').innerText = name;
+  document.getElementById('bioRole').innerText = role;
+  document.getElementById('bioText').innerText = bios[name] || '';
+  document.getElementById('bioModal').classList.add('open');
+}
+
+function closeBio() {
+  document.getElementById('bioModal').classList.remove('open');
+}
+
+document.querySelectorAll('.tm').forEach((card) => {
+  const name = card.querySelector('.tm__name')?.innerText || '';
+  const role = card.querySelector('.tm__role')?.innerText || '';
+  if (!name) return;
+  card.addEventListener('click', () => openBio(name, role));
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openBio(name, role);
+    }
+  });
+});
+
+document.getElementById('bioModal').addEventListener('click', (e) => {
+  if (e.target.id === 'bioModal') closeBio();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeBio();
+});
+</script>
+</body>
+</html>
