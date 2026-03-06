@@ -64,10 +64,18 @@ img{display:block;max-width:100%}
 .visuals img{aspect-ratio:16/8;object-fit:cover}
 
 .section-nav{display:flex;align-items:center;gap:54px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.brand-mark{display:flex;align-items:center;gap:20px;min-width:380px}
-.brand-mark .star{color:var(--red);font-size:75px;line-height:1}
-.brand-mark .title{font-family:var(--serif);font-size:70px;line-height:1}
-.brand-mark .sub{font-size:26px;color:#807d77;letter-spacing:.34em;margin-top:8px}
+.brand-mark{min-width:420px}
+.sv-logo{display:grid;grid-template-columns:auto 1px auto;align-items:center;column-gap:18px;color:var(--red)}
+.sv-logo__star{font-size:64px;line-height:1;filter:drop-shadow(0 0 0 transparent)}
+.sv-logo__divider{width:1px;height:90px;background:currentColor;opacity:.22}
+.sv-logo__wordmark{display:flex;flex-direction:column;gap:8px}
+.sv-logo__name{font-family:var(--serif);font-size:72px;line-height:.92;letter-spacing:.01em}
+.sv-logo__cn{font-size:24px;letter-spacing:.45em;color:currentColor;opacity:.7}
+.sv-logo--light{color:#c7d6d3}
+.sv-logo--compact .sv-logo__star{font-size:52px}
+.sv-logo--compact .sv-logo__divider{height:72px}
+.sv-logo--compact .sv-logo__name{font-size:58px}
+.sv-logo--compact .sv-logo__cn{font-size:19px}
 .menu{display:flex;gap:50px;font-size:35px;letter-spacing:.12em;text-transform:uppercase;color:#7f7c77}
 .menu a:hover{color:#111}
 .lp{margin-left:auto;border:1px solid var(--line);padding:14px 24px;font-size:31px;letter-spacing:.12em;text-transform:uppercase;color:#282723}
@@ -121,7 +129,7 @@ img{display:block;max-width:100%}
 
 .footer{background:#0a0b09;color:#d0d2ce;padding:70px 0 44px}
 .footer-top{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:46px;padding:34px 0 54px;border-top:1px solid #1a1a18;border-bottom:1px solid #1a1a18}
-.footer-brand h4{font-family:var(--serif);font-style:italic;font-size:78px;line-height:1.1;color:#f3f3f1;margin-bottom:28px}
+.footer-brand h4{font-family:var(--serif);font-style:italic;font-size:78px;line-height:1.1;color:#f3f3f1;margin:22px 0 28px}
 .footer-col h5{font-size:27px;letter-spacing:.16em;text-transform:uppercase;color:#3f423d;margin-bottom:18px}
 .footer-col a{display:block;font-size:46px;color:#81847f;margin-bottom:10px}
 .footer-col a:hover{color:#fff}
@@ -149,9 +157,10 @@ img{display:block;max-width:100%}
   .footer-bottom{font-size:18px}
   .cta,.about-right .cta,.strat a,.value-card a{font-size:13px}
   .menu{font-size:14px}
-  .brand-mark .title{font-size:44px}
-  .brand-mark .sub{font-size:12px}
-  .brand-mark .star{font-size:44px}
+  .sv-logo__name{font-size:44px}
+  .sv-logo__cn{font-size:12px}
+  .sv-logo__star{font-size:44px}
+  .sv-logo__divider{height:60px}
 }
 @media (max-width:980px){
   .intro-grid,.about-grid,.what-grid{grid-template-columns:1fr}
@@ -215,10 +224,13 @@ img{display:block;max-width:100%}
 
       <div class="section-nav">
         <div class="brand-mark">
-          <div class="star">✶</div>
-          <div>
-            <div class="title">ShoreVest</div>
-            <div class="sub">新 岸 资 本</div>
+          <div class="sv-logo" aria-label="ShoreVest logo">
+            <div class="sv-logo__star" aria-hidden="true">✶</div>
+            <div class="sv-logo__divider" aria-hidden="true"></div>
+            <div class="sv-logo__wordmark">
+              <div class="sv-logo__name">ShoreVest</div>
+              <div class="sv-logo__cn">新 岸 資 本</div>
+            </div>
           </div>
         </div>
         <nav class="menu" aria-label="Section nav">
@@ -338,8 +350,15 @@ img{display:block;max-width:100%}
       <div class="wrap">
         <div class="footer-top">
           <div class="footer-brand">
+            <div class="sv-logo sv-logo--light sv-logo--compact" aria-label="ShoreVest logo">
+              <div class="sv-logo__star" aria-hidden="true">✶</div>
+              <div class="sv-logo__divider" aria-hidden="true"></div>
+              <div class="sv-logo__wordmark">
+                <div class="sv-logo__name">ShoreVest</div>
+                <div class="sv-logo__cn">新 岸 資 本</div>
+              </div>
+            </div>
             <h4>Invest with<br>ShoreVest.</h4>
-            <div style="font-size:74px;color:#8f9490">✶</div>
           </div>
           <div class="footer-col">
             <h5>Quick Links</h5>
