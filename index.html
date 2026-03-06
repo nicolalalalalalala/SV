@@ -70,13 +70,13 @@ img{display:block;max-width:100%}
 .sv-logo__divider{width:1px;height:90px;background:currentColor;opacity:.22}
 .sv-logo__wordmark{display:flex;flex-direction:column;gap:8px}
 .sv-logo__name{font-family:var(--serif);font-size:72px;line-height:.92;letter-spacing:.01em}
-.sv-logo__cn{font-size:24px;letter-spacing:.45em;color:currentColor;opacity:.7}
+.sv-logo__cn{font-size:24px;letter-spacing:.22em;color:currentColor;opacity:.7}
 .shore-star{display:block;width:100%;height:100%;fill:currentColor}
 .sv-logo--light{color:#c7d6d3}
 .sv-logo--compact .sv-logo__star{width:52px;height:52px}
 .sv-logo--compact .sv-logo__divider{height:72px}
 .sv-logo--compact .sv-logo__name{font-size:58px}
-.sv-logo--compact .sv-logo__cn{font-size:19px}
+.sv-logo--compact .sv-logo__cn{font-size:19px;letter-spacing:.16em}
 .menu{display:flex;gap:50px;font-size:35px;letter-spacing:.12em;text-transform:uppercase;color:#7f7c77}
 .menu a:hover{color:#111}
 .lp{margin-left:auto;border:1px solid var(--line);padding:14px 24px;font-size:31px;letter-spacing:.12em;text-transform:uppercase;color:#282723}
@@ -159,7 +159,7 @@ img{display:block;max-width:100%}
   .cta,.about-right .cta,.strat a,.value-card a{font-size:13px}
   .menu{font-size:14px}
   .sv-logo__name{font-size:44px}
-  .sv-logo__cn{font-size:12px}
+  .sv-logo__cn{font-size:12px;letter-spacing:.12em}
   .sv-logo__star{width:44px;height:44px}
   .sv-logo__divider{height:60px}
 }
@@ -176,6 +176,18 @@ img{display:block;max-width:100%}
 </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute;left:-9999px;overflow:hidden" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="sv-star" viewBox="0 0 100 100">
+        <polygon points="50,3 53,31 50,44 47,31"/>
+        <polygon points="53,44 74,35 62,50"/>
+        <polygon points="56,52 68,76 50,60"/>
+        <polygon points="44,52 50,60 32,76"/>
+        <polygon points="38,50 26,35 47,44"/>
+        <polygon points="50,44 47,50 53,50"/>
+      </symbol>
+    </defs>
+  </svg>
   <main>
     <section class="eyebrow wrap">ShoreVest Partners — China Private Credit</section>
 
@@ -226,11 +238,11 @@ img{display:block;max-width:100%}
       <div class="section-nav">
         <div class="brand-mark">
           <div class="sv-logo" aria-label="ShoreVest logo">
-            <div class="sv-logo__star" aria-hidden="true"><svg class="shore-star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,3 53,31 50,44 47,31"/><polygon points="53,44 74,35 62,50"/><polygon points="56,52 68,76 50,60"/><polygon points="44,52 50,60 32,76"/><polygon points="38,50 26,35 47,44"/><polygon points="50,44 47,50 53,50"/></svg></div>
+            <div class="sv-logo__star" aria-hidden="true"><svg class="shore-star" aria-hidden="true"><use href="#sv-star"></use></svg></div>
             <div class="sv-logo__divider" aria-hidden="true"></div>
             <div class="sv-logo__wordmark">
               <div class="sv-logo__name">ShoreVest</div>
-              <div class="sv-logo__cn">新 岸 資 本</div>
+              <div class="sv-logo__cn">新岸资本</div>
             </div>
           </div>
         </div>
@@ -336,7 +348,7 @@ img{display:block;max-width:100%}
 
     <section class="quote">
       <div class="wrap">
-        <div class="star" aria-hidden="true"><svg class="shore-star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,3 53,31 50,44 47,31"/><polygon points="53,44 74,35 62,50"/><polygon points="56,52 68,76 50,60"/><polygon points="44,52 50,60 32,76"/><polygon points="38,50 26,35 47,44"/><polygon points="50,44 47,50 53,50"/></svg></div>
+        <div class="star" aria-hidden="true"><svg class="shore-star" aria-hidden="true"><use href="#sv-star"></use></svg></div>
         <blockquote>“The Coastal Redwood grows slowly but endures for centuries. We adopted it as our symbol to reflect our ambition of building ShoreVest as a hundred-year firm.”</blockquote>
         <p>ShoreVest Partners — Investment Philosophy</p>
       </div>
@@ -352,11 +364,11 @@ img{display:block;max-width:100%}
         <div class="footer-top">
           <div class="footer-brand">
             <div class="sv-logo sv-logo--light sv-logo--compact" aria-label="ShoreVest logo">
-              <div class="sv-logo__star" aria-hidden="true"><svg class="shore-star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,3 53,31 50,44 47,31"/><polygon points="53,44 74,35 62,50"/><polygon points="56,52 68,76 50,60"/><polygon points="44,52 50,60 32,76"/><polygon points="38,50 26,35 47,44"/><polygon points="50,44 47,50 53,50"/></svg></div>
+              <div class="sv-logo__star" aria-hidden="true"><svg class="shore-star" aria-hidden="true"><use href="#sv-star"></use></svg></div>
               <div class="sv-logo__divider" aria-hidden="true"></div>
               <div class="sv-logo__wordmark">
                 <div class="sv-logo__name">ShoreVest</div>
-                <div class="sv-logo__cn">新 岸 資 本</div>
+                <div class="sv-logo__cn">新岸资本</div>
               </div>
             </div>
             <h4>Invest with<br>ShoreVest.</h4>
