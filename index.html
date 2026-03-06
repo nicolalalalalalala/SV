@@ -1,421 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ShoreVest Partners</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+<title>ShoreVest Partners — China Private Credit</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-
-body{
-margin:0;
-font-family:Inter,Arial,sans-serif;
-background:#f5f5f2;
-color:#121212;
+:root {
+  --red:   #b3213f;
+  --ink:   #0c0c0a;
+  --ink2:  #141410;
+  --white: #ffffff;
+  --off:   #f6f4f0;
+  --rule:  rgba(0,0,0,0.08);
+  --mist:  #888680;
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans:  'Inter', system-ui, sans-serif;
+  --max:   1200px;
+  --pad:   64px;
 }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--white); color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.6; overflow-x:hidden; }
+a { text-decoration:none; color:inherit; }
+img { display:block; max-width:100%; }
+.wrap { max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:28px 60px;
-background:#111;
-color:white;
+.eyebrow {
+  font-family:var(--sans); font-size:10px; font-weight:500;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--mist);
+  display:flex; align-items:center; gap:14px;
+  margin-bottom:24px;
 }
+.eyebrow::after { content:''; flex:0 0 36px; height:1px; background:currentColor; }
+.eyebrow--red { color:var(--red); }
+.eyebrow--ghost { color:rgba(255,255,255,.38); }
+.eyebrow--ghost::after { background:rgba(255,255,255,.38); }
 
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-margin:0;
-padding:0;
-font-size:14px;
-letter-spacing:.08em;
+h1 { font-family:var(--serif); font-weight:400; line-height:1.04; }
+h2 { font-family:var(--serif); font-weight:400; line-height:1.08; }
+h2 em { font-style:italic; }
+
+.cta {
+  display:inline-flex; align-items:center; gap:14px;
+  font-family:var(--sans); font-size:11px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase;
+  transition:gap .2s; cursor:pointer; background:none; border:none;
 }
-
-.hero{
-background:#151512;
-color:white;
-padding:120px 60px;
+.cta:hover { gap:20px; }
+.cta__ring {
+  width:44px; height:44px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:17px; transition:background .2s, border-color .2s, color .2s;
+  flex-shrink:0;
 }
+.cta--dark { color:var(--ink); }
+.cta--dark .cta__ring { border:1px solid rgba(0,0,0,.2); }
+.cta--dark:hover .cta__ring { background:var(--red); border-color:var(--red); color:var(--white); }
+.cta--light { color:var(--white); }
+.cta--light .cta__ring { border:1px solid rgba(255,255,255,.32); }
+.cta--light:hover .cta__ring { background:var(--red); border-color:var(--red); }
 
-.hero h1{
-font-size:56px;
-margin-bottom:24px;
-max-width:700px;
+.rev { opacity:0; transform:translateY(22px); transition:opacity .75s ease, transform .75s ease; }
+.rev.in { opacity:1; transform:none; }
+.d1 { transition-delay:.1s; } .d2 { transition-delay:.2s; }
+.d3 { transition-delay:.3s; } .d4 { transition-delay:.4s; }
+
+#nav {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  height:72px; display:flex; align-items:center;
+  justify-content:space-between; padding:0 var(--pad);
+  border-bottom:1px solid var(--rule);
+  background:#ffffff;
 }
-
-.hero p{
-max-width:600px;
-line-height:1.7;
-opacity:.85;
+#nav.scrolled {
+  background:#ffffff;
+  border-bottom-color:var(--rule);
+  box-shadow:0 1px 20px rgba(0,0,0,.05);
 }
-
-.cta{
-display:inline-flex;
-align-items:center;
-gap:10px;
-padding:14px 26px;
-border:1px solid #111;
-cursor:pointer;
-background:white;
-font-weight:500;
-margin-top:30px;
+.nav__brand { font-family:var(--serif); font-size:26px; letter-spacing:.01em; }
+.nav__links { display:flex; gap:36px; list-style:none; }
+.nav__links a {
+  font-size:11px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink); opacity:.45; transition:opacity .2s;
 }
-
-.cta--dark{
-background:#111;
-color:white;
-border:none;
+.nav__links a:hover { opacity:1; }
+.nav__right { display:flex; align-items:center; gap:22px; }
+.nav__zh { font-size:13px; color:var(--ink); opacity:.35; transition:opacity .2s; }
+.nav__zh:hover { opacity:.75; }
+.nav__lp {
+  font-size:10px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink); border:1px solid rgba(0,0,0,.15); padding:8px 20px;
+  transition:background .2s, color .2s, border-color .2s;
 }
+.nav__lp:hover { background:var(--red); color:var(--white); border-color:var(--red); }
 
-section{
-padding:90px 60px;
-max-width:1200px;
-margin:auto;
+.hero {
+  background:linear-gradient(135deg, var(--ink), var(--ink2));
+  color:var(--white);
+  padding:160px var(--pad) 110px;
+  margin-top:72px;
 }
+.hero h1 { font-size:72px; max-width:900px; margin-bottom:24px; }
+.hero p { max-width:690px; color:rgba(255,255,255,.8); margin-bottom:40px; }
 
-.section-title{
-font-size:40px;
-margin-bottom:40px;
+section { padding:96px 0; }
+.firm { background:var(--off); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+.firm-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:64px; align-items:start; }
+.firm-copy h2 { font-size:54px; margin-bottom:24px; }
+.firm-copy p { color:#34342f; }
+.stats { display:grid; gap:28px; }
+.stat { border-top:1px solid var(--rule); padding-top:18px; }
+.stat__num { font-family:var(--serif); font-size:46px; line-height:1; }
+.stat__label { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--mist); margin-top:10px; }
+
+.team h2 { font-size:56px; margin-bottom:18px; }
+.team-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:34px; margin-top:44px; }
+.tm { cursor:pointer; }
+.tm__photo { position:relative; overflow:hidden; background:#ddd; aspect-ratio:260/295; }
+.tm__photo img { width:100%; height:100%; object-fit:cover; transition:transform .35s ease; }
+.tm:hover .tm__photo img { transform:scale(1.04); }
+.tm__overlay {
+  position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:flex-start;
+  padding:16px; background:linear-gradient(to top, rgba(0,0,0,.58), rgba(0,0,0,.1)); opacity:0;
+  transition:opacity .3s;
 }
+.tm:hover .tm__overlay { opacity:1; }
+.tm__name { margin-top:14px; font-size:24px; font-family:var(--serif); }
+.tm__role { font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--mist); margin-top:6px; }
 
-.stats{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:40px;
-margin-top:40px;
+footer { background:var(--ink); color:rgba(255,255,255,.82); padding:54px 0; margin-top:28px; }
+.footer-grid { display:flex; justify-content:space-between; gap:20px; align-items:center; }
+
+.bio-modal {
+  position:fixed; inset:0; z-index:999;
+  background:rgba(12,12,10,.72);
+  display:none; align-items:center; justify-content:center;
+  padding:30px;
 }
-
-.stat{
-font-size:42px;
-font-weight:600;
+.bio-modal.open { display:flex; }
+.bio-panel {
+  background:var(--white); width:min(760px, 100%); padding:44px 40px 36px;
+  position:relative; border:1px solid var(--rule);
 }
-
-.stat-label{
-font-size:14px;
-letter-spacing:.12em;
-color:#777;
+.bio-close {
+  position:absolute; right:12px; top:10px;
+  border:none; background:none; font-size:30px; cursor:pointer; color:#555;
 }
+.bio-name { font-family:var(--serif); font-size:48px; line-height:1.04; margin-bottom:8px; }
+.bio-role { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--mist); margin-bottom:20px; }
+.bio-text { color:#252521; }
 
-.team-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:40px;
-margin-top:60px;
+@media (max-width: 1080px) {
+  :root { --pad: 28px; }
+  .hero h1 { font-size:58px; }
+  .firm-grid { grid-template-columns:1fr; }
 }
-
-.tm{
-cursor:pointer;
+@media (max-width: 760px) {
+  .nav__links, .nav__right { display:none; }
+  .hero h1 { font-size:44px; }
+  .team-grid { grid-template-columns:1fr; }
+  .bio-name { font-size:36px; }
 }
-
-.tm__photo{
-position:relative;
-overflow:hidden;
-}
-
-.tm__photo img{
-width:100%;
-display:block;
-}
-
-.tm__overlay{
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.55);
-display:flex;
-align-items:center;
-justify-content:center;
-opacity:0;
-transition:opacity .3s ease;
-}
-
-.tm:hover .tm__overlay{
-opacity:1;
-}
-
-.tm__name{
-margin-top:14px;
-font-weight:600;
-}
-
-.tm__role{
-font-size:13px;
-color:#777;
-}
-
-.bio-modal{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.75);
-display:none;
-align-items:center;
-justify-content:center;
-padding:40px;
-z-index:999;
-}
-
-.bio-modal.open{
-display:flex;
-}
-
-.bio-panel{
-background:white;
-max-width:760px;
-padding:44px;
-position:relative;
-}
-
-.bio-close{
-position:absolute;
-right:20px;
-top:20px;
-font-size:24px;
-border:none;
-background:none;
-cursor:pointer;
-}
-
-.bio-name{
-font-size:36px;
-margin-bottom:8px;
-}
-
-.bio-role{
-font-size:12px;
-letter-spacing:.12em;
-text-transform:uppercase;
-color:#777;
-margin-bottom:20px;
-}
-
-.bio-text{
-line-height:1.7;
-}
-
-footer{
-background:#111;
-color:white;
-padding:60px;
-margin-top:80px;
-font-size:14px;
-}
-
-@media(max-width:900px){
-
-.hero{
-padding:80px 30px;
-}
-
-section{
-padding:70px 30px;
-}
-
-.team-grid{
-grid-template-columns:1fr;
-}
-
-.stats{
-grid-template-columns:1fr;
-}
-
-}
-
 </style>
-
 </head>
-
 <body>
 
-<nav>
-
-<div>SHOREVEST</div>
-
-<ul>
-<li>Firm</li>
-<li>Strategy</li>
-<li>Team</li>
-<li>Insights</li>
-<li>Contact</li>
-</ul>
-
+<nav id="nav">
+  <div class="nav__brand">ShoreVest</div>
+  <ul class="nav__links">
+    <li><a href="#firm">Firm</a></li>
+    <li><a href="#strategy">Strategy</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav__right">
+    <a class="nav__zh" href="#" aria-label="Chinese version">中文</a>
+    <a class="nav__lp" href="#">LP Login</a>
+  </div>
 </nav>
 
+<header class="hero" id="strategy">
+  <div class="wrap">
+    <div class="eyebrow eyebrow--ghost rev in">China Private Credit</div>
+    <h1 class="rev in d1">The patient advantage in China private credit.</h1>
+    <p class="rev in d2">ShoreVest Partners is a specialist private credit investment firm focused on China’s debt markets. We structure capital across complex credit situations with disciplined underwriting and downside protection.</p>
+    <button class="cta cta--light rev in d3"><span class="cta__ring">→</span> Discover the firm</button>
+  </div>
+</header>
 
-<div class="hero">
-
-<h1>The patient advantage in China credit</h1>
-
-<p>
-ShoreVest Partners is a specialist private credit investment firm focused exclusively on China’s debt markets. For over two decades the firm has invested across complex credit situations with an emphasis on downside protection and disciplined underwriting.
-</p>
-
-<button class="cta">Discover the Firm</button>
-
-</div>
-
-
-<section>
-
-<div class="section-title">The Firm</div>
-
-<p>
-ShoreVest Partners invests across China’s credit markets, including distressed debt, asset-backed lending, and special situations. The firm’s strategy emphasises senior secured positions, disciplined underwriting, and alignment with institutional investors.
-</p>
-
-<div class="stats">
-
-<div>
-<div class="stat">$2B+</div>
-<div class="stat-label">Capital Deployed</div>
-</div>
-
-<div>
-<div class="stat">20+</div>
-<div class="stat-label">Years in China Credit</div>
-</div>
-
-<div>
-<div class="stat">2004</div>
-<div class="stat-label">Firm Founded</div>
-</div>
-
-</div>
-
+<section class="firm" id="firm">
+  <div class="wrap firm-grid">
+    <div class="firm-copy rev">
+      <div class="eyebrow eyebrow--red">The firm</div>
+      <h2>Built for complexity. <em>Designed for protection.</em></h2>
+      <p>ShoreVest invests across China’s credit landscape, including distressed opportunities, asset-backed lending and special situations. Our approach emphasizes seniority, structured downside, and patient execution in less efficient corners of the market.</p>
+    </div>
+    <div class="stats rev d2" aria-label="Firm statistics">
+      <div class="stat"><div class="stat__num">$2B+</div><div class="stat__label">Capital Deployed</div></div>
+      <div class="stat"><div class="stat__num">20+</div><div class="stat__label">Years in China Credit</div></div>
+      <div class="stat"><div class="stat__num">2004</div><div class="stat__label">Firm Founded</div></div>
+    </div>
+  </div>
 </section>
 
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="eyebrow eyebrow--red rev">Team</div>
+    <h2 class="rev d1">Experienced operators in<br>special situations credit.</h2>
 
-<section>
+    <div class="team-grid">
+      <article class="tm rev d1">
+        <div class="tm__photo">
+          <img src="https://shorevest.com/wp-content/uploads/2021/03/Benjamin-Fanger-260x295.png" alt="Benjamin Fanger">
+          <div class="tm__overlay"><button class="cta cta--light"><span class="cta__ring">→</span> View Profile</button></div>
+        </div>
+        <div class="tm__name">Benjamin Fanger</div>
+        <div class="tm__role">Managing Partner & Founder</div>
+      </article>
 
-<div class="section-title">Team</div>
+      <article class="tm rev d2">
+        <div class="tm__photo">
+          <img src="https://shorevest.com/wp-content/uploads/2020/11/Team_0006_Ada-Bi_1-260x295.jpg" alt="Ada Bi">
+          <div class="tm__overlay"><button class="cta cta--light"><span class="cta__ring">→</span> View Profile</button></div>
+        </div>
+        <div class="tm__name">Ada Bi</div>
+        <div class="tm__role">Partner & Chief Financial Officer</div>
+      </article>
 
-<div class="team-grid">
-
-<div class="tm">
-
-<div class="tm__photo">
-
-<img src="https://shorevest.com/wp-content/uploads/2021/03/Benjamin-Fanger-260x295.png">
-
-<div class="tm__overlay">
-<button class="cta">View Profile</button>
-</div>
-
-</div>
-
-<div class="tm__name">Benjamin Fanger</div>
-<div class="tm__role">Managing Partner & Founder</div>
-
-</div>
-
-
-<div class="tm">
-
-<div class="tm__photo">
-
-<img src="https://shorevest.com/wp-content/uploads/2020/11/Team_0006_Ada-Bi_1-260x295.jpg">
-
-<div class="tm__overlay">
-<button class="cta">View Profile</button>
-</div>
-
-</div>
-
-<div class="tm__name">Ada Bi</div>
-<div class="tm__role">Partner & Chief Financial Officer</div>
-
-</div>
-
-
-<div class="tm">
-
-<div class="tm__photo">
-
-<img src="https://shorevest.com/wp-content/uploads/2020/11/Team_0003_Mei_1-260x295.jpg">
-
-<div class="tm__overlay">
-<button class="cta">View Profile</button>
-</div>
-
-</div>
-
-<div class="tm__name">Mei</div>
-<div class="tm__role">Partner</div>
-
-</div>
-
-</div>
-
+      <article class="tm rev d3">
+        <div class="tm__photo">
+          <img src="https://shorevest.com/wp-content/uploads/2020/11/Team_0003_Mei_1-260x295.jpg" alt="Mei">
+          <div class="tm__overlay"><button class="cta cta--light"><span class="cta__ring">→</span> View Profile</button></div>
+        </div>
+        <div class="tm__name">Mei</div>
+        <div class="tm__role">Partner</div>
+      </article>
+    </div>
+  </div>
 </section>
 
-
-<div id="bioModal" class="bio-modal">
-
-<div class="bio-panel">
-
-<button class="bio-close" onclick="closeBio()">×</button>
-
-<div class="bio-name" id="bioName"></div>
-<div class="bio-role" id="bioRole"></div>
-<div class="bio-text" id="bioText"></div>
-
+<div id="bioModal" class="bio-modal" role="dialog" aria-modal="true" aria-labelledby="bioName">
+  <div class="bio-panel">
+    <button class="bio-close" aria-label="Close" onclick="closeBio()">×</button>
+    <div class="bio-name" id="bioName"></div>
+    <div class="bio-role" id="bioRole"></div>
+    <div class="bio-text" id="bioText"></div>
+  </div>
 </div>
 
-</div>
-
-
-<footer>
-
-© ShoreVest Partners
-
+<footer id="contact">
+  <div class="wrap footer-grid">
+    <div>© ShoreVest Partners</div>
+    <div>Hong Kong • Shanghai • New York</div>
+  </div>
 </footer>
 
-
 <script>
+const bios = {
+  'Benjamin Fanger': 'Benjamin Fanger is the Founder and Managing Partner of ShoreVest Partners and a pioneer in China private credit. Over two decades he has managed more than $2 billion in Chinese private credit investments.',
+  'Ada Bi': 'Ada Bi is a Partner and Chief Financial Officer of ShoreVest Partners and serves on the firm\'s Investment Committee.',
+  'Mei': 'Mei is a Partner at ShoreVest Partners with extensive experience across Chinese private credit investments and portfolio management.'
+};
 
-const bios={
-
-"Benjamin Fanger":
-"Benjamin Fanger is the Founder and Managing Partner of ShoreVest Partners and a pioneer in China’s private credit markets. Over more than two decades he has managed more than $2 billion in Chinese private credit investments.",
-
-"Ada Bi":
-"Ada Bi is a Partner and Chief Financial Officer of ShoreVest Partners and serves on the firm's Investment Committee.",
-
-"Mei":
-"Mei is a Partner at ShoreVest Partners with extensive experience across Chinese private credit investments."
-
+function openBio(name, role) {
+  document.getElementById('bioName').innerText = name;
+  document.getElementById('bioRole').innerText = role;
+  document.getElementById('bioText').innerText = bios[name] || '';
+  document.getElementById('bioModal').classList.add('open');
 }
 
-function openBio(name,role){
-
-document.getElementById("bioName").innerText=name
-document.getElementById("bioRole").innerText=role
-document.getElementById("bioText").innerText=bios[name] || ""
-document.getElementById("bioModal").classList.add("open")
-
+function closeBio() {
+  document.getElementById('bioModal').classList.remove('open');
 }
 
-function closeBio(){
+document.querySelectorAll('.tm').forEach((card) => {
+  const name = card.querySelector('.tm__name').innerText;
+  const role = card.querySelector('.tm__role').innerText;
+  card.addEventListener('click', () => openBio(name, role));
+});
 
-document.getElementById("bioModal").classList.remove("open")
+document.getElementById('bioModal').addEventListener('click', (e) => {
+  if (e.target.id === 'bioModal') closeBio();
+});
 
-}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeBio();
+});
 
-document.querySelectorAll(".tm").forEach(card=>{
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) entry.target.classList.add('in');
+  });
+}, { threshold: 0.12 });
 
-let name=card.querySelector(".tm__name").innerText
-let role=card.querySelector(".tm__role").innerText
-
-card.addEventListener("click",()=>openBio(name,role))
-
-})
-
+document.querySelectorAll('.rev').forEach((el) => io.observe(el));
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+});
 </script>
-
 
 </body>
 </html>
